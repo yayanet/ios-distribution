@@ -1,0 +1,12 @@
+
+<% @files.each do |f| %>
+  <% path = relative_path f %>
+  <% name = File.basename f %>
+  <li>
+  <% if File.directory?(f) %>
+    <a href="/packages/list/<%= path %>"><%= name %></a>
+  <% else %>
+    <%= name %>
+  <% end %>
+  </li>
+<% end %>
