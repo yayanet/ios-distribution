@@ -68,7 +68,7 @@ module PackageLib
 
         if File.exist? path
           require 'rubygems'
-          require Rails.root.join('lib', 'ipa_reader', 'lib', 'ipa_reader')
+          require Rails.root.join('lib', 'ipa_reader', 'ipa_reader')
           @ipa = IpaReader::IpaFile.new(path)
         end
       end

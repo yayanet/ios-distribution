@@ -1,6 +1,7 @@
 class PackagesController < ApplicationController
 
   def index
+    redirect_to :action => 'list'
   end
 
   def list 
