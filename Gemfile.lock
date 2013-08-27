@@ -1,6 +1,7 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
+    CFPropertyList (2.1.1)
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
       mail (~> 2.5.3)
@@ -73,6 +74,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rubyzip (0.9.9)
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -109,10 +111,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  CFPropertyList
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
+  rubyzip
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

@@ -1,0 +1,42 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <!-- array of downloads.-->
+   <key>items</key>
+   <array>
+       <dict>
+           <!-- an array of assets to download -->
+           <key>assets</key>
+           <array>
+               <!-- software-package: the ipa to install.-->
+               <dict>
+                   <!-- required.the asset kind.-->
+                   <key>kind</key>
+                   <string>software-package</string>
+                   <!-- required.the URL of the file to download.-->
+                   <key>url</key>
+                   <string>http://<%= env['HTTP_HOST'] %>/<%= ipa['path'] %></string>
+               </dict>
+               <!-- display-image: the icon to display during download .-->
+               <dict>
+                   <key>kind</key>
+                   <string>display-image</string>
+                   <key>url</key>
+                   <string><%= ipa['icon'] %></string>
+               </dict>
+           </array><key>metadata</key>
+           <dict>
+               <!-- required -->
+               <key>bundle-identifier</key>
+               <string><%= ipa['id'] %></string>
+               <!-- required.the download kind.-->
+               <key>kind</key>
+               <string>software</string>
+               <!-- required.the title to display during the download.-->
+               <key>title</key>
+               <string><%= ipa['name'] %></string>
+           </dict>
+       </dict>
+   </array>
+</dict>
+</plist>
