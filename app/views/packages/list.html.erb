@@ -1,11 +1,11 @@
-<ul>
+<ul class="package-list">
 
 <% @files.each do |f| %>
   <% path = relative_path f %>
   <% name = File.basename f %>
   <% if File.directory?(f) %>
-  <li>
-    <a href="/packages/<%= path %>"><%= name %></a>
+  <li class="directory">
+    <a href="/packages/<%= path %>"><%= name %>/</a>
   </li>
   <% end %>
 <% end %>
@@ -13,7 +13,7 @@
 <% @ipas.each do |f| %>
   <% path = relative_path f %>
   <% name = File.basename f %>
-  <% plist = request.original_url + '/' + path + '.plist' %>
+  <% plist = request.original_url + '/' + name + '.plist' %>
   <li>
     <a href="itms-services://?action=download-manifest&url=<%=u plist %>"><%= name %></a>
   </li>

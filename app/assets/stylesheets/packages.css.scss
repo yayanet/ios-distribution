@@ -1,3 +1,25 @@
 // Place all the styles related to the packages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul.package-list {
+    margin: 10px;
+    padding: 0;
+    display: block;
+
+    li {
+        display: block;
+        
+        a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-bottom: 1px solid #DDD;
+            color: #555;
+            text-decoration: none;
+        }
+    }
+
+    li.directory a {
+        color: orange;
+    }
+}
