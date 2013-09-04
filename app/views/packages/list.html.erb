@@ -1,5 +1,9 @@
 <ul class="package-list">
 
+<% if request.params['path'] %>
+  <li class="directory"><a href="/">/</a></li>
+<% end %>
+
 <% @files.each do |f| %>
   <% path = relative_path f %>
   <% name = File.basename f %>
