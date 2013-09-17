@@ -1,6 +1,6 @@
 == About
 
-Distribution your iOS apps easliy.
+Distribute your iOS apps easliy.
 
 
 == Dependencies
