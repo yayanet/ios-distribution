@@ -16,6 +16,15 @@ module PackageLib
       @path[ROOT.length+1..-1]
     end
 
+    def urlencoded_relative_path
+      pieces = []
+      require 'open-uri'
+      self.relative_path.split('/').each do |name|
+        pieces.push(URI::encode(name))
+      end
+      pieces.join('/')
+    end
+
     def plist_exists?
       ! @path.nil? and File.exist? @path + '.plist'
     end
@@ -28,7 +37,7 @@ module PackageLib
       path = @path + '.plist'
       if self.ipa
         data = {
-          'path' => 'packages/' + self.relative_path,
+          'path' => 'packages/' + self.urlencoded_relative_path,
           'name' => self.ipa.name,
           'id' => self.ipa.bundle_identifier,
           'icon' => '',
